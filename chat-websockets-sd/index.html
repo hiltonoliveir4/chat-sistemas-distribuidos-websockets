@@ -1,114 +1,201 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-<body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .container {
+        top: 0;
+        width: 800px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: #e5ddd5;
+      }
+
+      .chat {
+        height: 80px;
+        width: 800px;
+        background-color: #f0f0f0;
+        position: fixed;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .chat-name {
+        font-size: 30px;
+        color: #333333;
+      }
+
+      .all-msg {
+        margin-top: 80px;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .barra-inferior {
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        height: 100px;
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      .texto {
+        width: 620px;
+        height: 65px;
+        border-radius: 30px;
+        border: 0px;
+        padding: 0 22px;
+        font-size: 20px;
+        color: #333333;
+        margin-right: 15px;
+      }
+
+      .minha-msg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input:focus {
+        border: 0;
+        outline: 0;
+      }
+
+      .btn-enviar {
+        width: 65px;
+        height: 65px;
+        border: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #009688;
+      }
+
+      .icon-send {
+        color: #ffffff;
+      }
+
+      .msg-enviada {
+        border-radius: 40px;
+        padding: 5px 30px;
+        background-color: #dcf8c6;
+        display: flex;
+        align-items: center;
+        margin: 5px 5px 5px auto;
+        max-width: 500px;
+        font-size: 25px;
+        color: #333333;
+      }
+
+      .msg-recebida {
+        border-radius: 40px;
+        padding: 5px 30px;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        max-width: 500px;
+        margin: 5px auto 5px 5px;
+        float: left;
+        font-size: 25px;
+        color: #333333;
+      }
+
+      .msg-sistema {
+        border-radius: 40px;
+        padding: 5px 30px;
+        background-color: #E34234;
+        display: flex;
+        align-items: center;
+        max-width: 500px;
+        margin: 5px auto 5px 5px;
+        float: left;
+        font-size: 25px;
+        color: #ffffff;
+      }
+
+    </style>
+  </head>
+
+  <body>
     <div class="container">
-        <div class="chat">
-            <p class="chat-name"> NOME DO CHAT </p>
+      <div class="chat">
+        <p class="chat-name">NOME DO CHAT</p>
+      </div>
+      <div class="all-msg" id="all-msg"></div>
+      <div class="barra-inferior">
+        <div class="minha-msg">
+          <input type="text" id="texto" class="texto" />
+          <button
+            type="submit"
+            class="btn-enviar"
+            id="btn-enviar"
+            onclick="enviarMensagem()"
+          >
+            <i class="icon-send material-icons" style="font-size: 30px">send</i>
+          </button>
         </div>
-        <div class="all-msg">
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-            <div class="msg-enviada">
-                <p class="msg">teste de mensagem enviada</p>
-            </div>
-            <div class="msg-recebida">
-                <p class="msg">teste de mensagem recebida</p>
-            </div>
-        </div>
-        <div class="barra-inferior">
-            <div class="minha-msg">
-                <input type="text" id="texto" class="texto">
-                <button type="submit" class="btn-enviar"><i class="icon-send material-icons" style="font-size: 30px;">send</i></button>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
+  </body>
+  <footer>
+    <script>
+      var HOST = location.origin.replace(/^http/, "ws");
+      const socket = new WebSocket(HOST);
+
+      socket.onmessage = (message) => {
+        var data = message.data;
+        console.log(data);
+
+        var mensagem = document.querySelector("#all-msg");
+
+        var new_message = document.createElement("div");
+
+        if (message.data[0] == '[' && message.data[8]){
+            new_message.classList.add("msg-sistema");
+            var data = data.slice(9,);
+        } else {
+            new_message.classList.add("msg-recebida");
+            var data = message.data;
+        }
+
+        new_message.innerHTML = `${data}`;
+        mensagem.appendChild(new_message);
+      };
+
+      const enviarMensagem = () => {
+        var texto = document.querySelector("#texto");
+        socket.send(texto.value);
+
+        var mensagem = document.querySelector("#all-msg");
+        var new_message = document.createElement("div");
+        new_message.classList.add("msg-enviada");
+        new_message.innerHTML = `${texto.value}`;
+        mensagem.appendChild(new_message);
+
+        texto.value = "";
+      };
+    </script>
+  </footer>
 </html>
