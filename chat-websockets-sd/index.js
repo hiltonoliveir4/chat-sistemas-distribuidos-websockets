@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3010;
 const INDEX = "index.html";
 
 //importando as bibliotecas ws e express
@@ -13,6 +13,7 @@ const server = express()
 const wss = new WebSocket.Server({ server });
 
 const Interpreter = require("./app.js");
+var idSocket = 0;
 
 const config = {
   roomsList: [],
@@ -21,6 +22,7 @@ const config = {
 
 wss.on("connection", (socket) => {
   console.log(`Cliente conectado`);
+  socket.id = idSocket++;
 
   const interpreter = new Interpreter(socket, config);
 
@@ -45,16 +47,12 @@ wss.on("connection", (socket) => {
       } else if (String(comando).match(/\/ban/)) {
         interpreter.ban(comando);
       } else {
-        interpreter.message("[SISTEMA] use /help para ver os comandos disponíveis");
+        interpreter.message(
+          "[SISTEMA] use /help para ver os comandos disponíveis"
+        );
       }
     } else {
       interpreter.message(message);
-
-      //   wss.clients.forEach((client) => {
-      //     if (client != socket) {
-      //       client.send(message);
-      //     }
-      //   });
     }
   });
 });

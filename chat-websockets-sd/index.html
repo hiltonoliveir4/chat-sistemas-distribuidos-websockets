@@ -25,22 +25,6 @@
         background-color: #e5ddd5;
       }
 
-      .chat {
-        height: 80px;
-        width: 800px;
-        background-color: #f0f0f0;
-        position: fixed;
-        top: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .chat-name {
-        font-size: 30px;
-        color: #333333;
-      }
-
       .all-msg {
         margin-top: 80px;
         margin-bottom: 100px;
@@ -98,7 +82,7 @@
       }
 
       .msg-enviada {
-        border-radius: 40px;
+        border-radius: 30px;
         padding: 5px 30px;
         background-color: #dcf8c6;
         display: flex;
@@ -110,7 +94,7 @@
       }
 
       .msg-recebida {
-        border-radius: 40px;
+        border-radius: 30px;
         padding: 5px 30px;
         background-color: #ffffff;
         display: flex;
@@ -123,16 +107,17 @@
       }
 
       .msg-sistema {
-        border-radius: 40px;
+        border-radius: 30px;
         padding: 5px 30px;
-        background-color: #E34234;
+        background-color: #ffffff;
         display: flex;
         align-items: center;
         max-width: 500px;
-        margin: 5px auto 5px 5px;
+        margin: 3px auto;
         float: left;
-        font-size: 25px;
-        color: #ffffff;
+        font-size: 10px;
+        color: #333333;
+        text-align: center;
       }
 
     </style>
@@ -140,9 +125,6 @@
 
   <body>
     <div class="container">
-      <div class="chat">
-        <p class="chat-name">NOME DO CHAT</p>
-      </div>
       <div class="all-msg" id="all-msg"></div>
       <div class="barra-inferior">
         <div class="minha-msg">
