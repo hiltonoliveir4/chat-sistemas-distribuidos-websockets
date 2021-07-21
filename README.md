@@ -4,14 +4,15 @@ Chat desenvolvido para a disciplina de Sistemas Distribuídos utilizando WebSock
 ## Requisitos
 * node 
 * porta 3010 liberada
-* ws instalado
-* express instalado
+
+## Instalação
+* executar npm install dentro do diretório principal da aplicação
 
 ## Iniciando a aplicação
 A aplicação trata-se de um chat via navegador web. Para executar ela execute os comandos abaixo dentro do terminal:
-* node index.js
+* npm start
 No navegador use:
-* localhost:3010/index.html
+* localhost:3010
 
 **ATENÇÃO: Para criar salas é necessário entrar como administrador** <br>
 **Se promover para admin: /promotetoadmin 147852369**
